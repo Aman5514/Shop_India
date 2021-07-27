@@ -1,99 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <%- include ("../partials/login/loginlink.ejs") %> 
-  </head>
-  <body>
-    <section id="main" class="section">
-      <div class="container">
-        <div class="form-container">
-          <div class="signin-signup">
-
-              <!-- login form -->
-
-        <form action="/login" method="POST" class="sign-in-form">
-              <h2 class="title">Sign In</h2>
-              <div class="input-field">
-                <i class="fas far far fa-envelope"></i>
-                <input type="email" name="login_email" placeholder="Email" required autocomplete="off">
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form in HTML | CodingNepal</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <link rel="stylesheet" href="css/login/style.css">
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login
             </div>
-              <div class="input-field">
-                  <i class="fas far fa-lock"></i>
-                  <input type="password" name="login_password" placeholder="password" required autocomplete="off">
-              </div>
-              <input type="submit" value="login" class="btn">
-            </form>    
-            <!-- signup form -->
-            <form action="/signup" method="POST" class="sign-up-form">
-                <h2 class="title">Sign Up</h2>
-                <div class="input-field">
-                    <i class="fas far fa-user"></i>
-                    <input type="text" name="name" placeholder="Username" required  autocomplete="none">
-                </div>
-                <div class="input-field">
-                    <i class="fas far far fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email" required autocomplete="off">
-                </div>
-                <div class="input-field">
-                    <i class="fas far fa-lock"></i>
-                    <input type="password" name="password" placeholder="password" required autocomplete="off">
-                </div>
-                <div class="input-field">
-                    <i class="fas far fa-lock"></i>
-                    <input type="password" name="cpassword" placeholder="confirm password" required autocomplete="off">
-                </div>
-                <input type="submit" value="Sign up" class="btn">
+            <div class="title signup">
+               Signup
             </div>
-                 </div>
-              </form>
-          </div>
-        </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="/login" method="POST" class="login">
+                  <div class="field">
+                     <input type="text"  name="login_email" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password"  name="login_password" placeholder="Password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Signup now</a>
+                  </div>
+               </form>
+               <form action="/signup" method="POST" class="signup">
+                    <div class="field">
+                        <input type="text" name="name" placeholder="User Name" required>
+                    </div>
+                  <div class="field">
+                     <input type="text" name="email" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="cpassword" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+               </form>
+            </div>
+         </div>
       </div>
-      <div class="svg-box">
-        <div class="left-svg svg">
-          <div class="content">
-            <h3>Are You A New User?</h3>
-            <p>
-             Sign up here! <br>
-            it takes 2 minutes and it's free!
-            </p>
-            <button class="signup" id="sign-up-btn">Sign Up</button>
-          </div>
-          <img src="./img/logo1.svg" class="image" alt="">
-        </div>
-      
-        
-        <div class="right-svg svg">
-          <div class="content">
-            <h3>Welcome back!</h3>
-            <p>
-              Already Registered User ? Click here to login
-            </p>
-            <button class="signup" id="sign-in-btn">Login</button>
-          </div>
-          <img src="./img/logo2.svg" class="image" alt="">
-        </div>
-        
-        
-      </div>
-    </section>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        
-        $('#sign-up-btn').click(function(){
-          $('.section').addClass('sign-up-mode')
-        });
-        
-        $('#sign-in-btn').click(function(){
-          $('.section').removeClass('sign-up-mode')
-        });
-      });
-    </script>
-  </body>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
 </html>
