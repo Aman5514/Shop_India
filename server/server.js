@@ -48,7 +48,6 @@ app.get("/home",private, (req, res) => {
   {
     throw new Error("Data not Found Internal Server Error");
   }
-  console.log(data);
   res.render("home/index",{
     product:data
   });

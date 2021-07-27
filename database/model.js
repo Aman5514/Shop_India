@@ -1,4 +1,3 @@
-require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -49,7 +48,7 @@ const registerSchema = new mongoose.Schema({
 registerSchema.methods.generateAuthToken = async function()
 {
   try {
-    const token = jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY);
+    const token = jwt.sign({_id:this._id.toString()},"mynameisamangutaandiwanttobecomesuccessfulldeveloper");
     this.tokens = this.tokens.concat({token:token})
     return token;
   } catch (error) {

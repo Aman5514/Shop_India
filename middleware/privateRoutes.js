@@ -4,7 +4,7 @@ const {Registration} = require("../database/model");
 const private = async (req, res, next) => {
   try {
     const token = req.cookies.ShopIndiaCookie;
-    const verify = jwt.verify(token, process.env.SECRET_KEY);
+    const verify = jwt.verify(token,"mynameisamangutaandiwanttobecomesuccessfulldeveloper");
     if(verify)
     {
       next();
