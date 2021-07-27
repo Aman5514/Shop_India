@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 480px) {
   body .main-container::after {
-    right: -110%;
+    right: -120%;
   }
   body header {
     height: 70px;
@@ -135,7 +135,7 @@
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 360px) {
   .nav .logo h3 {
     padding: 5px 4px;
     font-size: 14px;
@@ -170,10 +170,10 @@
   }
   .products .product-items {
     max-height: 280px;
-    width: 165px;
+    width: 158px;
   }
   .products .product-items .card-btn {
-    gap: 5px;
+    gap: 3px;
   }
   .products .product-items .card-btn button {
     padding: 3px 8px;
