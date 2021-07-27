@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("./upload.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --main:rgb(8, 26, 51);
+    --hover:rgb(10, 41, 83);
+    --green:rgb(9, 139, 9);
+    --blue:rgb(1, 128, 179);
+    --pink:rgb(177, 86, 101);
+    --linearGreen: linear-gradient(45deg,rgb(9, 139, 9),rgb(9, 196, 15),rgba(209, 209, 209, 0.637));
+    --linearBlue: linear-gradient(45deg,rgb(1, 128, 179),rgb(41, 132, 168),rgba(226, 225, 225, 0.651));
+    --linearPink: linear-gradient(45deg,rgb(177, 86, 101),rgb(216, 79, 102),rgba(219, 219, 219, 0.623));
+}
+html
+{
+    height: 100%;
+}
+body
+{
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+    overflow-x: hidden;
+}
+section
+{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+}
+.sidemenu
+{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    background-color: var(--main);
+    color: white;
+    transform: translateX(-100%);
+    transition: 0.6s;
+    z-index: 10;
+    opacity: 0;
+}
+.active
+{   
+    transform: translateX(0%);
+    width: 300px;
+    opacity:1; 
+}
+
+.sidemenu > h2
+{
+    margin: 12px;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    transition:all 0.4s ease-in;
+}
+.sidemenu > h2:hover
+{
+    background: white;
+    color: var(--main);
+}
+.sidemenu ul
+{
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    list-style: none;
+}
+.sidemenu ul li
+{
+    height: 75px;
+    display:flex; 
+    align-items: center;
+    padding-left: 20px;
+}
+.sidemenu ul li a
+{
+    text-decoration: none;
+    color: white;
+    font-family: 'Josefin',sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.sidemenu ul li:hover
+{
+    background-color: var(--hover);
+}
+.sidemenu ul li a > i
+{
+    margin-right:15px;
+    color: white;
+    font-size:30px;
+}
+.sidemenu ul li a > span
+{
+    font-size: 17px;
+    font-family: 'Josefin Sans';
+    font-weight: 500;
+}
+
+/* main section */
+.main_container
+{
+    width: 100%;
+    transition: 0.6s;
+    padding-left: 0px;
+
+}
+.active_main_container
+{
+    padding-left: 300px;
+    
+}
+.header
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background: rgb(238, 238, 238);
+    position: sticky;
+    top: 0;
+}
+.hamberger
+{
+    cursor: pointer;
+    font-size: 25px;
+}
+#menu
+{
+    transition: 0.6s;
+}
+.active_menu
+{
+transform: rotate(90deg);
+}
+.search
+{
+    flex: 0.9;
+}
+.search form
+{
+    position: relative;
+}
+.search form > input[type = "text"]
+{
+    height: 38px;
+    border-radius: 6px;
+    width: 100%;
+    border: 2px solid var(--main);
+    outline:none;
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 10px;
+}
+.search form > input[type="submit"]
+{
+    position: absolute;
+    border-radius: 6px;
+    right: 0;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    background: var(--main);
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+.search form > input[type="submit"]:hover{
+    background-color: var(--hover);
+}
+.avatar
+{
+    text-align: center;
+}
+
+/* header ends ......!!! */
+
+.mini_inner
+{
+    width: 100%;
+    height: 100px;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+.mini_inner .displayData
+{
+    height: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.data
+{
+    width: 24%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+.online_user,.new_user,.order,.payment
+{
+    display:flex;
+    justify-content: space-around;
+    width: 24%;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+}
+.data > .icon
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 36px;
+    border: 2px solid white;
+}
+.online_user
+{
+    background: var(--linearGreen);
+}
+.new_user
+{
+    background: var(--linearPink);   
+}
+.order
+{
+    background: var(--linearBlue);   
+}
+.payment
+{
+    background: var(--linearGreen);
+}
+.payment >.icon
+{
+    border: none;
+}
+.dataoverview
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 0 20px;
+    column-gap: 5px;
+}
+
+.new_users_details,.order_details,.Payment_details
+{
+    border: 3px solid var(--hover);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 10px;
+    padding: 5px;
+}
+.new_users_details h3,.order_details h3,.Payment_details h3
+{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: slategray;
+    text-transform: uppercase;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Josefin Sans';
+}

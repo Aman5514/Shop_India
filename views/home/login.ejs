@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <%- include ("../partials/login/loginlink.ejs") %> 
+  </head>
+  <body>
+    <section id="main" class="section">
+      <div class="container">
+        <div class="form-container">
+          <div class="signin-signup">
+
+              <!-- login form -->
+
+        <form action="/login" method="POST" class="sign-in-form">
+              <h2 class="title">Sign In</h2>
+              <div class="input-field">
+                <i class="fas far far fa-envelope"></i>
+                <input type="email" name="login_email" placeholder="Email" required autocomplete="off">
+            </div>
+              <div class="input-field">
+                  <i class="fas far fa-lock"></i>
+                  <input type="password" name="login_password" placeholder="password" required autocomplete="off">
+              </div>
+              <input type="submit" value="login" class="btn">
+            </form>    
+            <!-- signup form -->
+            <form action="/signup" method="POST" class="sign-up-form">
+                <h2 class="title">Sign Up</h2>
+                <div class="input-field">
+                    <i class="fas far fa-user"></i>
+                    <input type="text" name="name" placeholder="Username" required  autocomplete="none">
+                </div>
+                <div class="input-field">
+                    <i class="fas far far fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas far fa-lock"></i>
+                    <input type="password" name="password" placeholder="password" required autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas far fa-lock"></i>
+                    <input type="password" name="cpassword" placeholder="confirm password" required autocomplete="off">
+                </div>
+                <input type="submit" value="Sign up" class="btn">
+            </div>
+                 </div>
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="svg-box">
+        <div class="left-svg svg">
+          <div class="content">
+            <h3>Are You A New User?</h3>
+            <p>
+             Sign up here! <br>
+             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, soluta.
+            </p>
+            <button class="signup" id="sign-up-btn">Sign Up</button>
+          </div>
+          <img src="./img/logo1.svg" class="image" alt="">
+        </div>
+      
+        
+        <div class="right-svg svg">
+          <div class="content">
+            <h3>Welcome back!</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officia!
+            </p>
+            <button class="signup" id="sign-in-btn">Login In</button>
+          </div>
+          <img src="./img/logo2.svg" class="image" alt="">
+        </div>
+        
+        
+      </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $('#sign-up-btn').click(function(){
+          $('.section').addClass('sign-up-mode')
+        });
+        
+        $('#sign-in-btn').click(function(){
+          $('.section').removeClass('sign-up-mode')
+        });
+      });
+    </script>
+  </body>
+</html>

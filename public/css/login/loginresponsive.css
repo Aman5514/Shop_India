@@ -1,0 +1,92 @@
+@media screen and (max-width: 768px) {
+  form {
+    padding: 0 40px;
+  }
+  .input-field input {
+    font-size: 15px;
+  }
+  .svg {
+    padding: 0%;
+  }
+
+.svg-box .left-svg,
+.svg-box .right-svg
+{
+    padding:0;
+}
+  .svg .content {
+    padding: 10px;
+  }
+  .svg .content h3 {
+    font-size: 22px;
+  }
+  .content p {
+    font-size: 13px;
+  }
+  .signup {
+    width: 120px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 480px){
+    body .section::before
+    {
+        top: -112%;
+        right: -175%;
+        transition: 1s ease-in-out;
+    }
+   section .svg-box
+    {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+     .form-container .signin-signup
+    {
+        top: 60%;
+        width: 65%;
+        left: 50%;
+      }
+      body .section.sign-up-mode .signin-signup
+      {
+      transition: 1.2s ease-in-out;
+      left: 50%;
+      top: 35%;
+    }
+    .sign-in-form .input-field,
+    .sign-up-form .input-field
+    {
+      border-radius: 0 7px 7px 0 ;
+    }
+   .content .signup
+    {
+      width: 130px;
+      height: 40px;
+    }
+    .image
+    {
+        display: none;
+    }
+    form 
+    {
+        padding: 0px;
+    }
+ .sign-up-form .btn,
+ .sign-in-form .btn
+    {
+      width: 100%;
+      border-radius:7px;
+    }
+    
+.svg-box .left-svg
+{
+    justify-content: start;
+}
+body .section.sign-up-mode::before {
+    position: absolute;
+    top: 220%;
+    transform: translateY(-50%);
+  }
+
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <%- include("../partials/admin/adminlink.ejs")%>
+    <!-- <script>
+        function pass() {
+            var a = prompt("Enter Your Password");
+            if (a=="aman" & a!==null) {
+                console.log("aman");
+            } else {
+                history.back();
+            }
+            
+        }
+    </script> -->
+</head>
+<!-- <body onload="pass()"> -->
+ <body>        
+    <section>
+
+        <%- include("../partials/admin/sidemenu.ejs")%>
+
+        <div id="main_container" class="main_container">
+            <!-- Header  -->
+            <%- include("../partials/admin/adminheader.ejs")%>
+            
+            <!-- Body  -->
+            <%- include("../partials/admin/miniheader.ejs")%>
+
+            <div class="dataoverview">
+                <div class="new_users_details">
+                 <h3>new users </h3>
+
+                </div>
+                <div class="order_details">
+                    <h3>order details</h3>
+
+                </div>
+                <div class="Payment_details">
+                    <h3>payment details</h3>
+ 
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

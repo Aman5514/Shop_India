@@ -1,0 +1,50 @@
+<%- include("../partials/admin/adminlink.ejs")%>
+
+<section>
+  <%- include("../partials/admin/sidemenu.ejs")%>
+  <div id="main_container" class="main_container">
+    <%- include("../partials/admin/adminheader.ejs")%>
+    <div class="upload_section">
+      <form action="/admin/upload-data" method="POST" enctype="multipart/form-data">
+        <%= typeof msg != "undefined" ? msg: "" %> 
+        <label class="img_box" for="image">
+          <input
+            type="file"
+            name="image"
+            id="image"
+            required
+            accept="image/jpeg, image/jpg, image/png"
+          />
+        </label>
+
+        <label for="title">
+          Title:
+          <input type="text" name="title" id="title" required />
+        </label>
+
+        <label for="price">
+          Price:
+          <input type="number" name="price" id="price" required />
+        </label>
+
+        <label for="offprice">
+          Offprice:
+          <input type="number" name="offprice" id="offprice" required />
+        </label>
+        <label for="desc">
+          Descreption:
+          <textarea
+            name="desc"
+            id="desc"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </label>
+        <label for="upload_btn">
+          <button type="submit" id="upload_btn">Upload</button>
+        </label>
+      </form>
+    </div>
+  </div>
+</section>
