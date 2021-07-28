@@ -3,11 +3,11 @@
     <img src="data:image/<%=product.image.contentType%>;base64,
     <%=product.image.data.toString('base64')%>"/>
     <div class="card-content">
-      <h3><%= product.title %> </h3>
+      <h3><%= product.title %></h3>
       <p>
         <%= product.desc %> 
+        </p>
         <h2><%= product.price %> <del><%= product.offprice %> </del></h2>
-      </p>
     </div>
     <div class="card-btn">
       <i class="material-icons heart">favorite</i>

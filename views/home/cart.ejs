@@ -1,7 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <%- include ("../partials/home/links.ejs") %>
+<body>
+<%-include("../partials/home/header.ejs") %>
+<%-include("../partials/home/slidehomemenu.ejs") %>
 
 <div class="my_cart">
-  <%-include("../partials/home/header.ejs") %>
   <div class="cart_container">
     <h2>My Cart</h2>
     <div class="cart_data">
@@ -18,5 +28,7 @@
       </div>
     </div>
   </div>
-  <%- include("../partials/home/footer.ejs") %>
 </div>
+<%- include("../partials/home/footer.ejs") %>
+</body>
+</html>

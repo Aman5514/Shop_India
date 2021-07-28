@@ -12,7 +12,8 @@
 }
 :root
 {   
-    --main:rgb(8, 26, 51);
+    --main:hsl(215, 73%, 12%);
+    --hover: hsl(215, 73%, 19%);
     --primary: var(--green);
     --secondary: var(--blue);
     --tertiary: var(--yellow);
@@ -35,6 +36,70 @@ body
 {
     font-family: 'Josefin Sans', sans-serif;
     min-height: 100%;
+    position: relative;
+}
+.sliding-menu
+{
+    overflow: hidden;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:var(--main);
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: 0.4s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+.sliding-menu > .close
+{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 30px;
+}
+.sliding-menu .menu_items 
+{
+    width: 100%;
+    height: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+}
+.sliding-menu .menu_items a
+{
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+.sliding-menu .menu_items a:hover{
+    background-color: var(--hover);
+}
+.sliding-menu .menu_items a > h4
+{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.active-slide-menu
+{
+   left: 0;
 }
 
 .wrapper
@@ -181,6 +246,11 @@ ul li a{
     height: 40px;
     width: 40px;
     border-radius: 50%;
+}
+.menubtn
+{
+    font-size: 0px;
+    color: white;
 }
 /* header Ends here!!! */
 
@@ -338,7 +408,7 @@ ul li a{
     border-radius:12px;
     box-shadow: 0 0 12px rgba(0,0,0,0.5),
                 0 0 25px rgba(0,0,0,0.4);
-    max-height: 390px;
+    max-height: 370px;
     width: 250px;
     display: flex;
     justify-content: center;
@@ -365,7 +435,7 @@ ul li a{
 }
 .card-content
 {
-    margin-top:6px;
+    margin:6px 0;
     width: 100%;
 }
 .card-content > h3
@@ -382,6 +452,13 @@ ul li a{
     font-size: 16px;
     font-weight: bold;
     opacity: 0.8;
+}
+.card-content h2 > del
+{
+    margin-left: 8px;
+    color: rgb(247, 71, 71);
+    font-weight: lighter;
+    font-size: 14px;
 }
 .card-btn
 {
@@ -583,7 +660,7 @@ h4 > a:hover::before
 
 .cart_container
 {
-    padding: 90px 40px 20px 40px ;
+    padding: 20px ;
     display: flex;
     flex-direction: column;
     width: 100%;

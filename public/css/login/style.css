@@ -180,3 +180,12 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
+@media screen and(max-width:460px) {
+  
+body .wrapper
+{
+  width: 90%;
+  padding: 10px 20px;
+}
+
+}
