@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 // connecting to the mongoDB data base
 function connection(){
-        mongoose.connect("mongodb+srv://amang5514:ShopIndiaByAman@userregistration.cvvlz.mongodb.net/E_commerce_database?retryWrites=true&w=majority",{
+        mongoose.connect("mongodb+srv://amang5514:password@userregistration.cvvlz.mongodb.net/E_commerce_database?retryWrites=true&w=majority",{
         useNewUrlParser: true,
         useUnifiedTopology:true,
         useCreateIndex: true,
