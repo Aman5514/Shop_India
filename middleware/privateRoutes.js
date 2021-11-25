@@ -10,7 +10,7 @@ const private = async (req, res, next) => {
       next();
     }
   } catch (error) {
-    res.send('<h2 style="display:flex; width:100%;justify-content:center;align-item:center; height:50px; color:skyblue" >Please login first </h2>')
+    res.redirect("/")
   }
 };
 

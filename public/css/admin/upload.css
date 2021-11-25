@@ -11,7 +11,7 @@
     flex-direction: column;
     padding: 50px 0;
     width:50%;
-    gap: 10px;
+    gap: 5px;
 }
 form > label
 {
@@ -23,7 +23,13 @@ label > input[type="text"],input[type="number"]
 {
     height: 40px;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 16px;
+    width: 239.2px;
+}
+#select
+{
+    width: 239.2px;
+    height: 40px;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button
@@ -58,13 +64,23 @@ input[type="number"]::-webkit-outer-spin-button
 }
 .img_box > input
 {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 40px;
 }
-label > textarea
+label > #desc
 {
     width: 239.2px;
-    height: 120px;
+    height: 40px;
+    resize: none;
+    font-size: 17px;
+    font-family: monospace;
+    padding: 5px;
+}
+label > #maindesc
+{
+    font-size: 20px;
+    width: 239.2px;
+    height: 160px;
     resize: none;
     font-size: 17px;
     font-family: monospace;

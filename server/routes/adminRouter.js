@@ -43,13 +43,16 @@ router.post("/upload-data",store.single("image"), async (req,res,next) => {
         price:req.body.price,
         offprice:req.body.offprice,
         desc:req.body.desc,
+        maindesc:req.body.maindesc,
+        select:req.body.select
       });
       items.image.data = Buffer.from(encoding_img_data,"base64");
       items.image.contentType = files.mimetype;
       await items.save();
       res.status(200).render("adminPanel/upload")
     } catch(error){
-      res.status(404).send("Unable to upload data")
+
+      res.status(404).send(error.message)
     }
 });
 

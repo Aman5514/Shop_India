@@ -1,18 +1,26 @@
+<div class="prducts_heading">
+  <h5>Sports Shoes for You</h5>
+  <button class="view_all">View all</button>
+</div>
+<div class="product_sections">
 <% product.forEach(product => { %>
-  <div class="product-items">
-    <img src="data:image/<%=product.image.contentType%>;base64,
-    <%=product.image.data.toString('base64')%>"/>
-    <div class="card-content">
-      <h3><%= product.title %></h3>
-      <p>
-        <%= product.desc %> 
+  <a href="<%= product._id %> " class="product_link">
+    <div class="product-items">
+      <img src="data:image/<%=product.image.contentType%>;base64,
+      <%=product.image.data.toString('base64')%>"/>
+      <div class="card-content">
+        <h3><%= product.title %></h3>
+        <p>
+          <%= product.desc %> 
         </p>
-        <h2><%= product.price %> <del><%= product.offprice %> </del></h2>
+        <h2>₹ <%= product.price %> <del><%= product.offprice %> </del></h2>
+      </div>
+      <div class="card-btn">
+        <i class="material-icons heart">favorite</i>
+        <button>Buy</button>
+        <button>Add to cart</button>
+      </div>
     </div>
-    <div class="card-btn">
-      <i class="material-icons heart">favorite</i>
-      <button>Buy</button>
-      <button>Add to cart</button>
-    </div>
-  </div>
+  </a>
 <% }) %>
+</div>

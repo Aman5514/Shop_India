@@ -10,7 +10,6 @@ html,body{
   height: 100%;
   width: 100%;
   place-items: center;
-  background: -webkit-linear-gradient(left, #3c89c9, #2d2ae0);
 }
 ::selection{
   background: #3c1ee4;
@@ -107,17 +106,17 @@ input[type="radio"]{
 .form-inner form .field{
   height: 50px;
   width: 100%;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .form-inner form .field input{
   height: 100%;
   width: 100%;
   outline: none;
-  padding-left: 15px;
+  padding-left: 10px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   border-bottom-width: 2px;
-  font-size: 17px;
+  font-size: 15px;
   transition: all 0.3s ease;
 }
 .form-inner form .field input:focus{
@@ -180,12 +179,17 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
-@media screen and(max-width:460px) {
-  
-body .wrapper
-{
-  width: 90%;
-  padding: 10px 20px;
-}
 
-}
+@media screen and (max-width: 450px){
+
+  .wrapper{
+    width: 100%;
+    padding:20px;
+  }
+
+  .form-inner form .signup-link{
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+} 

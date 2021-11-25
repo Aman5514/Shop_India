@@ -72,9 +72,16 @@
     padding: 5px 10px;
     font-size: 13px;
   }
+
 }
 
 @media screen and (max-width: 501px) {
+  body header .nav .logo h3
+  {
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px dotted;
+  }
   body .main-container::after {
     right: -120%;
   }
@@ -82,7 +89,7 @@
     height: 70px;
   }
   body header .nav {
-    gap: 15px;
+    gap: 7px;
     padding: 0 5px;
   }
   body header .nav .logo {
@@ -119,7 +126,10 @@
   .nav .menu .menubtn{
     font-size: 30px;
   }
-
+  body .main-container
+  {
+    background-color: var(--blue);
+  }
   .main-container h1 {
     font-size: 23px;
   }
@@ -150,6 +160,8 @@
   }
   .footer .inner_footer_data > p {
     font-size: 12px;
+    padding: 0 12px;
+    margin: 12px 0;
   }
   .footer .inner_footer_data .inner_footer_sections {
     gap: 15px;
@@ -183,7 +195,9 @@
   .nav .menu .menubtn{
     font-size: 30px;
   }
+  /* .main .products .product_sections{
 
+  } */
   .main-container .hero_container .content-main h2 {
     font-size: 30px;
   }

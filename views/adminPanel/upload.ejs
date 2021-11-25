@@ -1,50 +1,97 @@
-<%- include("../partials/admin/adminlink.ejs")%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <%- include("../partials/admin/adminlink.ejs")%>
+  <body>
+    <section>
+      <%- include("../partials/admin/sidemenu.ejs")%>
+      <div id="main_container" class="main_container">
+        <%- include("../partials/admin/adminheader.ejs")%>
+        <div class="upload_section">
+          <form
+            action="/admin/upload-data"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <!-- <%= typeof msg != "undefined" ? msg: "" %> -->
+            <label class="img_box" for="image">
+              <input
+              type="file"
+              name="image"
+              id="image"
+              required
+              accept="image/jpeg, image/jpg, image/png"
+              />
+            </label>
+            
+            <label for="select">
+              Type:
+              <select name="select" id="select" required >
+                <option value="">Select type</option>
+                <option value="shoes">Shoes</option>
+                <option value="clothes">Clothes</option>
+                <option value="mobile">Mobile</option>
+                <option value="electronics">Electronics</option>
+              </select>
+            </label>
 
-<section>
-  <%- include("../partials/admin/sidemenu.ejs")%>
-  <div id="main_container" class="main_container">
-    <%- include("../partials/admin/adminheader.ejs")%>
-    <div class="upload_section">
-      <form action="/admin/upload-data" method="POST" enctype="multipart/form-data">
-        <%= typeof msg != "undefined" ? msg: "" %> 
-        <label class="img_box" for="image">
-          <input
-            type="file"
-            name="image"
-            id="image"
-            required
-            accept="image/jpeg, image/jpg, image/png"
-          />
-        </label>
+            <label for="title">
+              Title:
+              <input type="text" name="title" id="title" required placeholder="Brand Name" />
+            </label>
 
-        <label for="title">
-          Title:
-          <input type="text" name="title" id="title" required />
-        </label>
+            <label for="price">
+              Price:
+              <input type="number" name="price" id="price" required placeholder="Price" />
+            </label>
 
-        <label for="price">
-          Price:
-          <input type="number" name="price" id="price" required />
-        </label>
+            <label for="offprice">
+              Offprice:
+              <input type="number" name="offprice" id="offprice" required placeholder="Off-Price" />
+            </label>
+            <label for="desc">
+              Mini-Descreption:
+              <textarea
+                name="desc"
+                id="desc"
+                cols="30"
+                rows="5"
+                required
+                placeholder="(maximum 30 Character)"
+              ></textarea>
+            </label>
+            <label for="maindesc">
+              Main-Descreption:
+              <textarea
+                name="maindesc"
+                id="maindesc"
+                cols="30"
+                rows="5"
+                required
+                placeholder="Main-descreption"
+              ></textarea>
+            </label>
+            <label for="upload_btn">
+              <button type="submit" id="upload_btn">Upload</button>
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <label for="offprice">
-          Offprice:
-          <input type="number" name="offprice" id="offprice" required />
-        </label>
-        <label for="desc">
-          Descreption:
-          <textarea
-            name="desc"
-            id="desc"
-            cols="30"
-            rows="10"
-            required
-          ></textarea>
-        </label>
-        <label for="upload_btn">
-          <button type="submit" id="upload_btn">Upload</button>
-        </label>
-      </form>
-    </div>
-  </div>
-</section>
+    <script>
+      const title = document.getElementById("title");
+      const description = document.getElementById("desc");
+      const Maindescription = document.getElementById("main-desc");
+      const select = document.getElementById('select');
+
+
+
+    </script>
+  </body>
+</html>

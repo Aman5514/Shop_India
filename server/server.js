@@ -5,14 +5,15 @@ const port = process.env.PORT || 3000;
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const adminRouter = require("./routes/adminRouter");
+const homeRouter = require("./routes/homeRouter");
 const private = require("../middleware/privateRoutes")
 const UploadedData = DisplayItem.find({});
 
-
 // database
-require("../database/database");
 
+require("../database/database");
 // static files and using packages
+
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use(
 app.use(cookieParser());
 // routers ---------------->
 app.use("/admin",adminRouter);
+app.use("/home",homeRouter)
 
 app.listen(port, () => {
   console.log(`server is running at ${port}`);
@@ -49,12 +51,20 @@ app.get("/home",private, (req, res) => {
     throw new Error("Data not Found Internal Server Error");
   }
   res.render("home/index",{
-    product:data
+    product:data,
   });
 });
 
-
 });
+
+// app.get("/home/:id",(req, res)=>
+// {
+//   const id = req.params.id;
+//   const productDetails = DisplayItem.findById({_id:id})
+//   res.render("home/productDetailPage",{
+//     id:"hello there"
+//   })
+// })
 
 app.get("/cart",private,(req, res) => {
   res.render("home/cart");
@@ -120,6 +130,6 @@ app.post("/login",async (req, res) => {
 });
 
 
-app.get("*", (req, res) => {
-  res.redirect("/")
-});
+// app.get("*", (req, res) => {
+//   res.redirect("/")
+// });
